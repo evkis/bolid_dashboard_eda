@@ -469,19 +469,18 @@ def main(df1,df2):
 def file_upload():
     col1, col2 = st.columns((2))
     with col1:
-        fl1 = st.file_uploader(":file_folder: ЗАГРУЗИТЕ ФАЙЛ CHECKS",type=(["csv"]))
+        fl1 = st.file_uploader(":file_folder: ЗАГРУЗИТЕ ФАЙЛ CHECKS", type=["csv"])
     with col2:
-        fl2 = st.file_uploader(":file_folder: ЗАГРУЗИТЕ ФАЙЛ ITEMS",type=(["csv"]))
+        fl2 = st.file_uploader(":file_folder: ЗАГРУЗИТЕ ФАЙЛ ITEMS", type=["csv"])
+    
     if fl1 is not None and fl2 is not None:
-        filename1 = fl1.name
-        st.write(filename1)
-        df1=pd.read_csv(filename1)
-        filename2 = fl2.name
-        st.write(filename2)
-        df2=pd.read_csv(filename2)
-        main(df1,df2)
+        df1 = pd.read_csv(fl1)
+        st.write("Файл CHECKS успешно загружен.")
+        df2 = pd.read_csv(fl2)
+        st.write("Файл ITEMS успешно загружен.")
+        main(df1, df2)
     else:
-       st.warning("Загрузите файлы и дождитесь их загрузки.")
+        st.warning("Загрузите файлы и дождитесь их загрузки.")
 
-if __name__=='__main__': 
+if __name__ == '__main__':
     file_upload()
