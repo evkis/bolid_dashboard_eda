@@ -483,7 +483,8 @@ def file_upload():
     else:
        st.warning("Загрузите файлы и дождитесь их загрузки.")
 
-file_upload()
+if __name__=='__main__': 
+    file_upload()
 
 
 
