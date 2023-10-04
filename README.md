@@ -1,2 +1,2 @@
-# bolid_dashboard_eda
-bolid_dashboard_eda
+# DASHBOARD FOR DATA ANALYSIS OF MAIN ECONOMIC INDICATORS
+
